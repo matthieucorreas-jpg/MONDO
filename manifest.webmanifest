@@ -1,0 +1,12 @@
+{
+  "name":"MONDO — La curiosité au quotidien",
+  "short_name":"MONDO",
+  "description":"Microlearning gratuit, leçons et répétition espacée, même hors connexion.",
+  "start_url":"./index.html",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#f8f8fb",
+  "theme_color":"#f8f8fb",
+  "lang":"fr",
+  "icons":[{"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
+}
