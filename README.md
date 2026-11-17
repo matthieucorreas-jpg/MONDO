@@ -1,3 +1,34 @@
+# MONDO V2 — leçons enrichies (17 novembre 2026)
+
+**Cette mise à jour préserve automatiquement la progression enregistrée dans le navigateur** (clé localStorage `mondo_learning_v1`).
+
+Nouveautés :
+- Trois leçons entièrement réécrites (Copernic, détroit d’Ormuz, taux et inflation).
+- 8 écrans illustrés par leçon, avec cartes schématiques, chronologies, comparaisons et diagrammes SVG/CSS intégrés (offline).
+- 6 questions par leçon, avec correction ; les 3 anciennes questions conservent leurs indices de révision.
+- Accès direct aux 3 leçons enrichies depuis l’accueil.
+- Sources pédagogiques officielles affichées à la fin des leçons.
+- Autres cours, test de niveau, catalogue et révisions inchangés.
+
+## Mettre à jour le dépôt GitHub existant
+
+Sur <https://github.com/matthieucorreas-jpg/MONDO>, importez les fichiers de cette archive dans la **racine** du dépôt (là où se trouve `index.html`). Conserver la structure `icons/`. Les fichiers déjà présents avec le même nom doivent être **remplacés**, pas copiés dans un nouveau sous-dossier. Enregistrez la modification (Commit changes). La publication GitHub Pages se fait automatiquement sur `main`.
+
+Pour mettre à jour la version en ligne, utilisez une nouvelle visite puis rechargez une fois après activation du nouveau service worker si nécessaire. Sur Chrome Android, fermer puis relancer MONDO peut suffire.
+
+**Important :** avant toute manipulation, effectuer `Mon parcours → Exporter` pour conserver une copie JSON de la progression. Ne pas effacer les données du navigateur. Le contenu reste gratuit, sans compte, sans API, sans publicité et sans collecte de données.
+
+`lessons.js` contient les 24 leçons V1, `premium-lessons.js` enrichit 3 d’entre elles sans en supprimer aucune. Les visuels sont inclus dans le code ; les liens de sources nécessitent le réseau si on souhaite les ouvrir.
+
+## Limites
+
+- 24 leçons disponibles dont 3 enrichies. Aucun nouveau cours ne s’ajoute automatiquement.
+- Les schémas du détroit d’Ormuz sont **schématiques**, pas des cartes géopolitiques à utiliser pour la navigation ou vérifier les frontières.
+- Les données chiffrées d’Ormuz sont des ordres de grandeur historiques datés du premier semestre 2025, pas une surveillance en temps réel.
+- La progression reste propre à chaque navigateur/appareil et peut être exportée/importée.
+
+---
+
 # MONDO — Ton alternative gratuite à Nibble
 
 MONDO est une application web progressive (PWA), **sans abonnement, publicité, suivi publicitaire, compte ni service payant**. Elle est pensée pour une séance quotidienne de microlearning, avec un catalogue libre.
