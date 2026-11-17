@@ -1,87 +1,43 @@
-# MONDO V2 — leçons enrichies (17 novembre 2026)
+# MONDO v2.1 — Une carte plus lisible et un quiz plus exigeant
 
-**Cette mise à jour préserve automatiquement la progression enregistrée dans le navigateur** (clé localStorage `mondo_learning_v1`).
+Cette mise à jour conserve les **24 leçons originales**, le diagnostic, le catalogue, les quiz, les révisions espacées et les données personnelles stockées sur ton appareil. Elle ajoute **3 leçons premium** de 8 écrans chacune, soit **24 écrans illustrés originaux**, et des quiz plus exigeants (79 questions au total, dont 6 sur les taux d’intérêt).
 
-Nouveautés :
-- Trois leçons entièrement réécrites (Copernic, détroit d’Ormuz, taux et inflation).
-- 8 écrans illustrés par leçon, avec cartes schématiques, chronologies, comparaisons et diagrammes SVG/CSS intégrés (offline).
-- 6 questions par leçon, avec correction ; les 3 anciennes questions conservent leurs indices de révision.
-- Accès direct aux 3 leçons enrichies depuis l’accueil.
-- Sources pédagogiques officielles affichées à la fin des leçons.
-- Autres cours, test de niveau, catalogue et révisions inchangés.
+### Leçons enrichies
+- **Géopolitique :** Pourquoi le détroit d’Ormuz est stratégique ; carte schématique, flux d’énergie 2025, routes, alternatives, propagation du risque.
+- **Histoire :** 1453, la chute de Constantinople ; plan schématique, frise, siège, Corne d’Or, héritage et nuance historique.
+- **Économie :** Comment les taux d’intérêt freinent l’inflation ; transmission monétaire, simulation de prêt à 2 % et 5 %, désinflation et délais.
 
-## Mettre à jour le dépôt GitHub existant
+Les 24 visuels sont codés directement dans `visuals.js` en SVG, sans réseau, abonnement ou API. Les chiffres de l’énergie correspondent à l’année **2025** et non au trafic en temps réel. Chaque leçon inclut des liens vers des sources de référence.
 
-Sur <https://github.com/matthieucorreas-jpg/MONDO>, importez les fichiers de cette archive dans la **racine** du dépôt (là où se trouve `index.html`). Conserver la structure `icons/`. Les fichiers déjà présents avec le même nom doivent être **remplacés**, pas copiés dans un nouveau sous-dossier. Enregistrez la modification (Commit changes). La publication GitHub Pages se fait automatiquement sur `main`.
+## Mise à jour de ton dépôt GitHub
 
-Pour mettre à jour la version en ligne, utilisez une nouvelle visite puis rechargez une fois après activation du nouveau service worker si nécessaire. Sur Chrome Android, fermer puis relancer MONDO peut suffire.
+1. **Avant toute manipulation**, ouvre MONDO → Mon parcours → **Exporter** afin de garder une copie de ta progression.
+2. Télécharge et décompresse `MONDO_v2_1_MAJ_GitHub.zip`.
+3. Dans le dépôt GitHub `matthieucorreas-jpg/MONDO`, choisis **Add file → Upload files**. Glisse les fichiers à la racine : `lessons.js`, `visuals.js`, `app.js`, `sw.js` et `README.md` (5 fichiers). Valide **Commit changes**. GitHub Pages reste actif : **aucun changement dans Settings → Pages**.
+4. Consulte l’adresse `https://matthieucorreas-jpg.github.io/MONDO/`. Si l’ancienne version reste visible, ferme l’application, ouvre l’adresse dans Chrome, recharge deux fois, puis relance MONDO. Le nouveau service worker remplace son cache hors ligne à l’installation.
+5. Vérifie le catalogue : les trois sujets enrichis sont visibles. Tes leçons déjà faites restent enregistrées : le stockage local `mondo_learning_v1` n’a pas été modifié.
 
-**Important :** avant toute manipulation, effectuer `Mon parcours → Exporter` pour conserver une copie JSON de la progression. Ne pas effacer les données du navigateur. Le contenu reste gratuit, sans compte, sans API, sans publicité et sans collecte de données.
-
-`lessons.js` contient les 24 leçons V1, `premium-lessons.js` enrichit 3 d’entre elles sans en supprimer aucune. Les visuels sont inclus dans le code ; les liens de sources nécessitent le réseau si on souhaite les ouvrir.
-
-## Limites
-
-- 24 leçons disponibles dont 3 enrichies. Aucun nouveau cours ne s’ajoute automatiquement.
-- Les schémas du détroit d’Ormuz sont **schématiques**, pas des cartes géopolitiques à utiliser pour la navigation ou vérifier les frontières.
-- Les données chiffrées d’Ormuz sont des ordres de grandeur historiques datés du premier semestre 2025, pas une surveillance en temps réel.
-- La progression reste propre à chaque navigateur/appareil et peut être exportée/importée.
-
----
-
-# MONDO — Ton alternative gratuite à Nibble
-
-MONDO est une application web progressive (PWA), **sans abonnement, publicité, suivi publicitaire, compte ni service payant**. Elle est pensée pour une séance quotidienne de microlearning, avec un catalogue libre.
-
-## Ce qui fonctionne dès maintenant
-
-- **24 leçons originales** réparties en quatre thèmes (géopolitique, histoire, économie, sciences & idées), avec trois niveaux de difficulté.
-- **72 questions de quiz**, chacune avec une explication de la bonne réponse.
-- **Diagnostic de 8 questions** pour estimer le niveau de départ par thème.
-- **Leçon du jour** : suggestion choisie selon les centres d'intérêt, le niveau estimé et les leçons déjà réalisées.
-- **Catalogue** : filtres par thème, recherche, leçons terminées.
-- **Répétition espacée** : chaque question de quiz devient une carte à revoir à J+1. Une réponse juste augmente l'intervalle (3, 7, 14 puis 30 jours) ; une erreur reprogramme au lendemain.
-- **Suivi personnel** : progression, points XP, série de jours, maîtrise par thème.
-- **Sauvegarde locale** + export / import d'un fichier JSON depuis le profil.
-- **Mode hors ligne** après une première visite sur une version hébergée en HTTPS et mise en cache.
-
-Les leçons sont incluses *dans le code de l'application*. Elles ne sont pas générées par une API, donc la plateforme fonctionne sans coût d'IA, mais **n'ajoute pas automatiquement des cours inédits chaque jour**. Une fois les 24 cours terminés, ils restent accessibles pour révision. Les informations de géopolitique sont pédagogiques et ne se mettent pas à jour en temps réel.
-
-## Essayer immédiatement
-
-Ouvre le fichier `MONDO_version_autonome.html` fourni séparément dans Chrome ou un autre navigateur moderne. Cette version est contenue dans un fichier unique, utile pour découvrir l'interface. Selon les restrictions de ton téléphone, l'ouverture d'un fichier local peut limiter la sauvegarde de la progression. Pour la conserver durablement et installer MONDO, utilise plutôt la PWA.
-
-## Installer gratuitement comme une application sur Android
-
-1. Crée un compte GitHub gratuit, si tu n'en as pas.
-2. Dans GitHub, crée un **nouveau dépôt public** (par exemple `mondo`). Le dépôt contient seulement du code pédagogique, jamais ta progression personnelle.
-3. Décompresse `MONDO_application_PWA.zip` sur ton ordinateur. Dans le dépôt, utilise **Add file → Upload files** pour envoyer `index.html`, `app.js`, `lessons.js`, `manifest.webmanifest`, `sw.js`, et le dossier `icons/` avec ses trois fichiers. Puis valide l'envoi (Commit changes).
-4. Ouvre **Settings → Pages**. Dans **Build and deployment**, choisis **Deploy from a branch**, puis la branche `main`, dossier `/(root)` et **Save**.
-5. GitHub affichera l'URL de ton site dans la page Pages une fois publié. Ouvre **ton URL** avec Chrome sur Android.
-6. Dans Chrome, touche le menu **⋮ → Ajouter à l'écran d'accueil**, puis **Installer** si cette option est proposée.
-7. Lance MONDO depuis son icône. Après le premier chargement réussi, les cours sont mis en cache pour fonctionner hors ligne.
-
-**Coût : 0 €** avec l'offre gratuite de GitHub Pages pour un dépôt public. Aucun domaine personnalisé, abonnement, serveur, base de données ni clé API n'est nécessaire.
-
-### Sauvegarde de la progression
-
-Le menu **Profil → Exporter** télécharge `mondo-progression-AAAA-MM-JJ.json`. Conserve ce fichier. **Profil → Importer** restaure les résultats sur une autre installation. Ne vide pas les données de Chrome sans avoir exporté ta progression.
+Si tu importes les fichiers via l’interface GitHub web, **ne glisse pas le ZIP lui-même** ; extrais son contenu. Les icônes existantes ne sont pas à remplacer dans cette mise à jour.
 
 ## Fichiers
 
-- `index.html` : interface de l'application et styles.
-- `lessons.js` : contenu pédagogique et questions ; modifiable pour enrichir le catalogue.
-- `app.js` : navigation, calendrier de révision, quiz, recommandations et sauvegarde.
-- `manifest.webmanifest` : installation de la PWA.
-- `sw.js` : mise en cache pour le mode hors ligne.
-- `icons/` : icônes de l'application.
+- `index.html` : style et mise en page des leçons enrichies ; charge `visuals.js`.
+- `visuals.js` : illustrations vectorielles originales (24 schémas).
+- `lessons.js` : contenus pédagogiques, quiz et sources.
+- `app.js` : lecteur enrichi, zoom sur les visuels, quiz, révisions et sauvegarde.
+- `sw.js` : cache hors ligne version 2.
+- `README.md` : ce guide.
 
-## Limites de cette première version
+## Confidentialité et limites
 
-- Pas de notifications programmées par Android : ouvrir l'application suffit pour afficher les révisions dues.
-- Pas de synchronisation entre téléphone et ordinateur : utilise Exporter / Importer.
-- Pas de contenu dynamique ni de veille d'actualité intégrée ; il faut ajouter de nouveaux cours dans `lessons.js`.
-- Le niveau est une **estimation simplifiée** qui évolue selon le diagnostic et les derniers quiz ; il ne s'agit pas d'une mesure psychométrique validée.
-- Un site GitHub Pages d'un dépôt public peut être consulté par quiconque connaît son adresse ; les résultats personnels ne sont pas publiés, puisqu'ils restent dans le navigateur.
+Aucun compte ni connexion à un serveur n’est nécessaire pour utiliser MONDO. GitHub Pages sert uniquement les fichiers. La progression est conservée sur le **même navigateur / profil d’application** ; elle n’est pas automatiquement synchronisée entre appareils. Les anciennes révisions et les points XP sont conservés. Pour ajouter des leçons, on enrichira progressivement la bibliothèque au même format.
 
-Version 1 — 16 novembre 2026.
+Sources de référence : AIE, EIA, Metropolitan Museum of Art, Banque centrale européenne.
+Version : 17 novembre 2026.
+
+
+## Ajustements de la v2.1
+- **Ormuz** : illustration d’ouverture remplacée par une véritable lecture géographique schématique, avec les deux golfes, l’Iran, les Émirats, Oman et le passage mis en évidence ; zoom cartographique amélioré. Croquis pédagogique et non carte de navigation.
+- **Taux d’intérêt** : quiz de 6 questions au lieu de 5, axé sur des raisonnements, l’inflation attendue, les emprunts à taux fixe, le cumul d’inflation, les anticipations de marché et la rentabilité des investissements. Deux paragraphes de la leçon ont été complétés pour préparer ces questions.
+- Les identifiants de leçons et le format de sauvegarde ne changent pas. Si tu avais déjà fini la leçon sur les taux, refais-la pour débloquer la nouvelle question de révision ; les anciennes cartes restent programmées.
+- Le service worker utilise un nouveau cache (`mondo-v2-1-20261117`) pour diffuser les modifications hors ligne.
